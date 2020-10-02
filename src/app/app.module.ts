@@ -6,6 +6,9 @@ import { PaginaComponent } from './paginaprincipala/pagina/pagina.component';
 import { HeaderComponent } from './paginaprincipala/componente/header/header.component';
 import { FooterComponent } from './paginaprincipala/componente/footer/footer.component';
 import { NavigationComponent } from './paginaprincipala/componente/navigation/navigation.component';
+import { RouterModule, Routes } from '@angular/router';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,11 @@ import { NavigationComponent } from './paginaprincipala/componente/navigation/na
     NavigationComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule,
+    StoreRouterConnectingModule.forRoot(),
+    RouterModule.forRoot([]),
+    StoreModule.forRoot({}, {})
   ],
   providers: [],
   bootstrap: [AppComponent]
