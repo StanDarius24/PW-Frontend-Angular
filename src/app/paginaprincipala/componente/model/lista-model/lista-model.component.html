@@ -1,6 +1,7 @@
+<body style="background-color: #15161d">
 <div class="panel panel-primary" *ngFor="let Mod of modele">
   <div class="panel-heading">
-    <h3 class="panel-title">{{Mod.name}}</h3>
+    <h3 class="panel-title nume">{{Mod.name}}</h3>
   </div>
   <div class="panel-body">
     <div class="col-xs-10">
@@ -11,20 +12,20 @@
 
         <div class="col-xs-8">
           <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-6 rosiatic">
                  Email
             </div>
-            <div class="col-xs-6">
+            <div class="col-xs-6 rosiatic">
               : {{Mod.email}}
             </div>
         </div>
 
           <div class="col-xs-8">
             <div class="row">
-              <div class="col-xs-6">
+              <div class="col-xs-6 rosiatic">
                 Nr telefon
               </div>
-              <div class="col-xs-6">
+              <div class="col-xs-6 rosiatic">
                 : 0{{Mod.phone}}
               </div>
             </div>
@@ -33,3 +34,7 @@
     </div>
   </div>
 </div>
+  </div>
+
+</div>
+</body>

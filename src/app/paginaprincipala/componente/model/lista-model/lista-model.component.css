@@ -1,4 +1,17 @@
 .imgeClass{
   width:300px;
   height:200px;
+  position: relative;
+  left : 15px;
+  border: darkred 10px;
+}
+.rosiatic{
+  color: darkred;
+  position: relative;
+  left: 40px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.nume{
+  color: indianred;
 }

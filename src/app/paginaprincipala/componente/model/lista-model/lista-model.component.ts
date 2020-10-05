@@ -12,7 +12,7 @@ export class ListaModelComponent implements OnInit {
       id: 1,
       name: 'Darius',
       email: 'standarius24@gmail.com',
-      picture: '/src/assets/img/product01.png'
+      picture: 'https://news.theosarc.net/wp-content/uploads/2019/08/cropped-mainsec05.jpg'
     },
     {
       id: 2,
