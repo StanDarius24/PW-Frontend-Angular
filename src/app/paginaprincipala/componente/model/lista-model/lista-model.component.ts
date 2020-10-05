@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Model} from '../model.bazadedate';
 
 @Component({
-  selector: 'app-lista-model',
+
   templateUrl: './lista-model.component.html',
   styleUrls: ['./lista-model.component.css']
 })

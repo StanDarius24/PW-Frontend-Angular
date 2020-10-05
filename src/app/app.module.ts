@@ -9,23 +9,26 @@ import { NavigationComponent } from './paginaprincipala/componente/navigation/na
 import { RouterModule, Routes } from '@angular/router';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
-import {AddComponent} from './paginaprincipala/componente/add/add.component';
 import {ListaModelComponent} from './paginaprincipala/componente/model/lista-model/lista-model.component';
-
+import {CreateModelComponent} from './paginaprincipala/componente/model/create-model.component';
+const appRoutes: Routes = [
+  { path: 'list', component: ListaModelComponent },
+  { path: 'create', component: CreateModelComponent },
+  { path: '', redirectTo: '/list' , pathMatch: 'full' }
+  ];
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
-    AddComponent,
     ListaModelComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
     StoreRouterConnectingModule.forRoot(),
-    RouterModule.forRoot([]),
+    RouterModule.forRoot(appRoutes),
     StoreModule.forRoot({}, {})
   ],
   providers: [],
