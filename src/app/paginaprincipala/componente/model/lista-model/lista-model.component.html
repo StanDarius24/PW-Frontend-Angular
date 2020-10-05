@@ -1,0 +1,35 @@
+<div class="panel panel-primary" *ngFor="let Mod of modele">
+  <div class="panel-heading">
+    <h3 class="panel-title">{{Mod.name}}</h3>
+  </div>
+  <div class="panel-body">
+    <div class="col-xs-10">
+      <div class="row">
+        <div class="col-xs-4">
+          <img class="imgeClass" [src]="Mod.picture"/>
+        </div>
+
+        <div class="col-xs-8">
+          <div class="row">
+            <div class="col-xs-6">
+                 Email
+            </div>
+            <div class="col-xs-6">
+              : {{Mod.email}}
+            </div>
+        </div>
+
+          <div class="col-xs-8">
+            <div class="row">
+              <div class="col-xs-6">
+                Nr telefon
+              </div>
+              <div class="col-xs-6">
+                : 0{{Mod.phone}}
+              </div>
+            </div>
+
+      </div>
+    </div>
+  </div>
+</div>
