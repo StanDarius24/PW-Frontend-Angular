@@ -2,7 +2,9 @@ export class Model
 {
 id: number;
 name: string;
-email: string;
-phone?: number;
+descriere: string;
+pret: number;
+datalansarii: Date;
+categorie: string;
 picture: string;
 }

@@ -1,0 +1,12 @@
+.rosiatic{
+  color: darkred;
+  position: relative;
+  font-size: 30px;
+  font-weight: bold;
+}
+.marginegroasa{
+  border-style: solid;
+}
+.margine3d{
+  border-style: inset;
+}

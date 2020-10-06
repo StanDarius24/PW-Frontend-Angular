@@ -15,3 +15,10 @@
 .nume{
   color: indianred;
 }
+.marginegroasa{
+  border-style: solid;
+}
+.margine3d{
+  border-style: inset;
+}
+

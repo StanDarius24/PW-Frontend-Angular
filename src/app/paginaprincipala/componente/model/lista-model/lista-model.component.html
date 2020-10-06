@@ -1,38 +1,66 @@
 
 <body style="background-color: #15161d">
-<div class="panel panel-primary" *ngFor="let Mod of modele">
+<div class="panel panel-primary text-center marginegroasa" *ngFor="let Mod of modele">
   <div class="panel-heading">
     <h3 class="panel-title nume">{{Mod.name}}</h3>
   </div>
-  <div class="panel-body">
+  <div class="panel-body margine3d ">
     <div class="col-xs-10">
       <div class="row">
         <div class="col-xs-4">
           <img class="imgeClass" [src]="Mod.picture"/>
         </div>
-
-        <div class="col-xs-8">
+<!--id: number;
+name: string;
+descriere: string;
+pret: number;
+datalansarii: Date;
+categorie: string;
+picture: string; -->
+        <div class="col-xs-8 ">
           <div class="row">
-            <div class="col-xs-6 rosiatic">
-                 Email
+            <div class="col-xs-6 rosiatic ">
+                 Descriere
             </div>
             <div class="col-xs-6 rosiatic">
-              : {{Mod.email}}
+              : {{Mod.descriere}}
             </div>
         </div>
 
           <div class="col-xs-8">
             <div class="row">
               <div class="col-xs-6 rosiatic">
-                Nr telefon
+                Pret
               </div>
               <div class="col-xs-6 rosiatic">
-                : 0{{Mod.phone}}
+                : {{Mod.pret}} lei
               </div>
             </div>
+          </div>
 
+          <div class="col-xs-8">
+            <div class="row">
+              <div class="col-xs-6 rosiatic">
+               Data
+              </div>
+              <div class="col-xs-6 rosiatic">
+                : {{Mod.datalansarii.getDay()}}.{{Mod.datalansarii.getMonth()}}.{{Mod.datalansarii.getFullYear()}}
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-8">
+            <div class="row">
+              <div class="col-xs-6 rosiatic">
+                Categorie
+              </div>
+              <div class="col-xs-6 rosiatic">
+                : {{Mod.categorie}}
+              </div>
+            </div>
+          </div>
       </div>
-    </div>
+
   </div>
 </div>
   </div>
