@@ -4,8 +4,40 @@
   </div>
   <div class="panel-body">
 
+    <div class="form-group text-center rosiatic margine3d">
+      <label>Denumire</label>
+      <input #denumire type="text" class="form-control text-center font-weight-bold" >
+    </div>
+
+    <div class="form-group text-center rosiatic margine3d">
+      <label>Descriere</label>
+      <input #descriere type="text" class="form-control text-center font-weight-bold" >
+    </div>
+
+    <div class="form-group text-center rosiatic margine3d">
+      <label>Pret</label>
+      <input #pret type="number" class="form-control text-center font-weight-bold" >
+    </div>
+
+    <div class="form-group text-center rosiatic margine3d">
+      <label>Data lansarii</label>
+      <input #datalansarii type="date" class="form-control text-center font-weight-bold" >
+    </div>
+
+    <div class="form-group text-center rosiatic margine3d">
+      <label>Categorie</label>
+      <input #categorie type="text" class="form-control text-center font-weight-bold" >
+    </div>
+
+    <div class="form-group text-center rosiatic margine3d">
+      <label>Link Imagine</label>
+      <input #link type="text" class="form-control text-center font-weight-bold" >
+    </div>
+
   </div>
-  <div class="panel-footer text-center margine3d">
-    <button type="submit" class="btn btn-danger">Salveaza</button>
+  <div class="panel-footer text-center">
+    <button (click)="getVal(denumire.value,descriere.value,pret.value,datalansarii.value,categorie.value,link.value)" class="btn btn-danger">Salveaza</button>
   </div>
+
 </div>
+

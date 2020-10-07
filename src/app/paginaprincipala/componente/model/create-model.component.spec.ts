@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { CreateModelComponent } from './create-model.component';
+import {FormsModule} from '@angular/forms';
 
 describe('CreateModelComponent', () => {
   let component: CreateModelComponent;

@@ -11,6 +11,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import {ListaModelComponent} from './paginaprincipala/componente/model/lista-model/lista-model.component';
 import {CreateModelComponent} from './paginaprincipala/componente/model/create-model.component';
+import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 const appRoutes: Routes = [
   { path: 'list', component: ListaModelComponent },
   { path: 'create', component: CreateModelComponent },
@@ -22,11 +23,14 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     NavigationComponent,
+    CreateModelComponent,
     ListaModelComponent,
   ],
   imports: [
     BrowserModule,
     RouterModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreRouterConnectingModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     StoreModule.forRoot({}, {})
