@@ -8,7 +8,7 @@
     <div class="col-xs-10">
       <div class="row">
         <div class="col-xs-4">
-          <img class="imgeClass" [src]="Mod.picture"/>
+          <img class="imgeClass" [src]="Mod.img" style="cursor: pointer;" (click)="selectProduct(Mod.id)"/>
         </div>
 <!--id: number;
 name: string;
@@ -18,14 +18,7 @@ datalansarii: Date;
 categorie: string;
 picture: string; -->
         <div class="col-xs-8 ">
-          <div class="row">
-            <div class="col-xs-6 rosiatic ">
-                 Descriere
-            </div>
-            <div class="col-xs-6 rosiatic">
-              : {{Mod.descriere}}
-            </div>
-        </div>
+
 
           <div class="col-xs-8">
             <div class="row">
@@ -44,7 +37,7 @@ picture: string; -->
                Data
               </div>
               <div class="col-xs-6 rosiatic">
-                : {{Mod.datalansarii.getDay()}}.{{Mod.datalansarii.getMonth()}}.{{Mod.datalansarii.getFullYear()}}
+                : {{Mod.data}}
               </div>
             </div>
           </div>
@@ -59,6 +52,8 @@ picture: string; -->
               </div>
             </div>
           </div>
+
+
       </div>
 
   </div>

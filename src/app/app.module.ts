@@ -13,11 +13,14 @@ import {CreateModelComponent} from './paginaprincipala/componente/model/create-m
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
 import {ProduseService} from './paginaprincipala/services/produse.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ProdusComponent} from './paginaprincipala/componente/produs/produs.component';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListaModelComponent },
+  { path: 'produs/:id', component: ProdusComponent },
   { path: 'create', component: CreateModelComponent },
   { path: '', redirectTo: '/list' , pathMatch: 'full' }
+
   ];
 @NgModule({
   declarations: [
@@ -25,6 +28,7 @@ const appRoutes: Routes = [
     HeaderComponent,
     FooterComponent,
     CreateModelComponent,
+    ProdusComponent,
     ListaModelComponent,
   ],
   imports: [
@@ -35,7 +39,8 @@ const appRoutes: Routes = [
     ReactiveFormsModule,
     StoreRouterConnectingModule.forRoot(),
     RouterModule.forRoot(appRoutes),
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot({}, {}),
+
   ],
   providers: [ProduseService],
   bootstrap: [AppComponent]

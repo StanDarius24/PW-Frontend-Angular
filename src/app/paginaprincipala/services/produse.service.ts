@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../../environments/environment';
+import {Observable} from 'rxjs';
+import {Model} from '../componente/model/model.bazadedate';
 
 @Injectable({
   providedIn: 'root'
@@ -8,7 +10,7 @@ import {environment} from '../../../environments/environment';
 export class ProduseService {
   private SERVER = environment.SERVER;
   constructor(private http: HttpClient) { }
-  citesteDinBazaDeDATE(numberres:number = 10)
+  citesteDinBazaDeDATE(numberres: number = 10)
   {
   return this.http.get(this.SERVER + '/products',{
     params:{
@@ -16,4 +18,8 @@ export class ProduseService {
   });
 
   }
+  getSingleProduct(id: Number): Observable<Model> {
+    return this.http.get<Model>(this.SERVER + 'products/' + id);
+  }
+
 }
