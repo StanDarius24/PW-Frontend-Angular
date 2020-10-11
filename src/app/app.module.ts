@@ -5,13 +5,15 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './paginaprincipala/componente/header/header.component';
 import { FooterComponent } from './paginaprincipala/componente/footer/footer.component';
-import { NavigationComponent } from './paginaprincipala/componente/navigation/navigation.component';
 import { RouterModule, Routes } from '@angular/router';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import {ListaModelComponent} from './paginaprincipala/componente/model/lista-model/lista-model.component';
 import {CreateModelComponent} from './paginaprincipala/componente/model/create-model.component';
 import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import {ProduseService} from './paginaprincipala/services/produse.service';
+import {HttpClientModule} from '@angular/common/http';
+
 const appRoutes: Routes = [
   { path: 'list', component: ListaModelComponent },
   { path: 'create', component: CreateModelComponent },
@@ -22,7 +24,6 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    NavigationComponent,
     CreateModelComponent,
     ListaModelComponent,
   ],
@@ -30,12 +31,13 @@ const appRoutes: Routes = [
     BrowserModule,
     RouterModule,
     FormsModule,
+    HttpClientModule,
     ReactiveFormsModule,
     StoreRouterConnectingModule.forRoot(),
     RouterModule.forRoot(appRoutes),
     StoreModule.forRoot({}, {})
   ],
-  providers: [],
+  providers: [ProduseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
