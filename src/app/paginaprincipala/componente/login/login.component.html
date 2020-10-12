@@ -1,0 +1,20 @@
+<form  method="post">
+  <div class="imgcontainer">
+    <img src="/assets/img/Untitled.png" alt="Avatar" class="avatar">
+  </div>
+
+  <div class="container titlu margine3d">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" placeholder="Enter Username" name="uname" #nume required>
+
+    <label for="psw"><b>Password</b></label>
+    <input type="password" #parola placeholder="Enter Password" name="psw" required>
+
+    <button (click)="verificare(nume.value,parola.value)" class="btn-danger" type="submit">Login</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+
+
+</form>

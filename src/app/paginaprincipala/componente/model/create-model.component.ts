@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Model} from './model.bazadedate';
-
+import {ProduseService} from '../../services/produse.service';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-create-model',
   templateUrl: './create-model.component.html',
@@ -9,7 +10,7 @@ import {Model} from './model.bazadedate';
 export class CreateModelComponent implements OnInit {
 
   modele: Model;
-  constructor() { }
+  constructor(private produseService: ProduseService, private router: Router) { }
   ngOnInit(): void {
   }
   getVal( denumire , descriere , pret , datalansarii , categorie , link ): void

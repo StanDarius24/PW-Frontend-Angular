@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {ProduseService} from '../../../services/produse.service';
 import {Router} from "@angular/router";
-import {Model} from '../model.bazadedate';
+
 
 
 
