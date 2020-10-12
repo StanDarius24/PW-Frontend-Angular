@@ -5,20 +5,32 @@
   left : 15px;
   border: darkred 10px;
 }
+
+.imaginerupe{
+
+}
+.imaginerupe:hover{
+
+}
+
 .rosiatic{
-  color: darkred;
+  color: black;
   position: relative;
   left: 40px;
   font-size: 20px;
   font-weight: bold;
 }
 .nume{
-  color: indianred;
+  color: black;
 }
 .marginegroasa{
   border-style: solid;
 }
 .margine3d{
-  border-style: inset;
+  transition: 0.4s;
+}
+.margine3d:hover{
+  transition: 0.2s;
+  box-shadow: 0 0 10px red, 0 0 15px darkred, 0 0 20px red, 0 0 25px darkred;
 }
 

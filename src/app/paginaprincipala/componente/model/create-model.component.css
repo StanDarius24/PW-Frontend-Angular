@@ -1,12 +1,27 @@
 .rosiatic{
-  color: darkgray;
+  color: black;
   position: relative;
+  font-size: 20px;
+  font-weight: bold;
+}
+.titlu{
+  color: darkred;
   font-size: 30px;
   font-weight: bold;
 }
-.marginegroasa{
-  border-style: solid;
-}
 .margine3d{
-  border-style: inset;
+  transition: 0.4s;
+}
+.margine3d:hover{
+  transition: 0.2s;
+  box-shadow: 0 0 10px red, 0 0 15px darkred, 0 0 20px red, 0 0 25px darkred;
+}
+
+.margine{
+
+  transition: 0.2s;
+  box-shadow: 0 0 10px red, 0 0 15px darkred, 0 0 20px red, 0 0 25px darkred;
+}
+.margine:hover{
+  transition: 0.4s;
 }

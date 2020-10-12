@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders } from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
 import {Model} from '../componente/model/model.bazadedate';
@@ -10,7 +10,7 @@ import {Model} from '../componente/model/model.bazadedate';
 export class ProduseService {
   private SERVER = environment.SERVER;
   constructor(private http: HttpClient) { }
-  citesteDinBazaDeDATE(numberres: number = 10)
+  citesteDinBazaDeDATE(numberres: number = 14)
   {
   return this.http.get(this.SERVER + '/products',{
     params:{
@@ -18,8 +18,12 @@ export class ProduseService {
   });
 
   }
-  getSingleProduct(id: Number): Observable<Model> {
-    return this.http.get<Model>(this.SERVER + 'products/' + id);
+  getSingleProduct(id: number): Observable<any> {
+    return this.http.get<Model>(this.SERVER + '/products/' + id);
   }
+
+  getProductFromCategory(catName: string) : Observable<any[]>{
+  return this.http.get<any>(this.SERVER + '/products/category' + catName);
+}
 
 }

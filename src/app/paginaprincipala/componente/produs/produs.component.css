@@ -1,0 +1,15 @@
+.titlu{
+  color: darkred;
+  font-size: 30px;
+  font-weight: bold;
+}
+.double{border-style: double;}
+.left{
+  position: relative;
+  left: 15px;
+}
+.ods{
+  color: whitesmoke;
+  font-size: 20px;
+  font-weight: bold;
+}

@@ -3,15 +3,15 @@ import {ActivatedRoute, ParamMap} from '@angular/router';
 import {ProduseService} from '../../services/produse.service';
 import {map} from 'rxjs/operators';
 import {Model} from '../model/model.bazadedate';
+declare let $: any;
 @Component({
   selector: 'app-produs',
   templateUrl: './produs.component.html',
   styleUrls: ['./produs.component.css']
 })
 export class ProdusComponent implements OnInit {
-  id: Number;
+  id: number;
   product;
-  thumbimages: any[] = [];
   constructor(private route: ActivatedRoute,
               private productService: ProduseService) { }
 
@@ -25,12 +25,11 @@ export class ProdusComponent implements OnInit {
       this.id = prodId;
       this.productService.getSingleProduct(this.id).subscribe(prod => {
         this.product = prod;
-        if (prod.picture !== null) {
-          this.thumbimages = prod.picture.split(';');
-        }
-
+        console.warn(this.product);
       });
     });
+
   }
+
 
 }

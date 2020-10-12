@@ -1,2 +1,10 @@
-<p>ESTI PE {{id}}</p>
-<p>{{product}}</p>
+
+<div class="container-md">
+  <div class="titlu double">{{product.name}}</div>
+<img class="imgeClass left" [src]="product.img" height="350px"/>
+
+  <div class="left ods">Pret: {{product.pret}} lei</div>
+  <div class="left ods">Categorie: {{product.categorie}}</div>
+  <div class="left ods">Data: {{product.data}}</div>
+  <div class="left ods">Descriere: {{product.descriere}}</div>
+</div>

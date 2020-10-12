@@ -14,7 +14,12 @@ export class CreateModelComponent implements OnInit {
   }
   getVal( denumire , descriere , pret , datalansarii , categorie , link ): void
   {
-    console.warn(denumire,descriere,pret,datalansarii,categorie,link);
+    this.modele.name=denumire;
+    this.modele.picture=link;
+    this.modele.datalansarii=datalansarii;
+    this.modele.pret=pret;
+    this.modele.categorie=categorie;
+
 
   }
 }

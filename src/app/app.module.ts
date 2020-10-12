@@ -29,7 +29,7 @@ const appRoutes: Routes = [
     FooterComponent,
     CreateModelComponent,
     ProdusComponent,
-    ListaModelComponent,
+    ListaModelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,15 +1,19 @@
 
-<body style="background-color: #15161d">
-<div class="panel panel-primary text-center marginegroasa" *ngFor="let Mod of modele">
+
+<!-- #15161d -->
+<div style="background-color: #15161d">
+<div class="panel panel-primary text-center" *ngFor="let Mod of modele">
+  <div class="container-md" style="background-color: dimgrey">
   <div class="panel-heading">
-    <h3 class="panel-title nume">{{Mod.name}}</h3>
+    <h3 class="panel-title nume " style="margin-top: 2%">{{Mod.name}}</h3>
   </div>
-  <div class="panel-body margine3d ">
+  <div class="panel-body margine3d">
     <div class="col-xs-10">
       <div class="row">
         <div class="col-xs-4">
-          <img class="imgeClass" [src]="Mod.img" style="cursor: pointer;" (click)="selectProduct(Mod.id)"/>
+          <img class="imgeClass imaginerupe " [src]="Mod.img" style="cursor: pointer;" (click)="selectProduct(Mod.id)"/>
         </div>
+
 <!--id: number;
 name: string;
 descriere: string;
@@ -42,6 +46,7 @@ picture: string; -->
             </div>
           </div>
 
+
           <div class="col-xs-8">
             <div class="row">
               <div class="col-xs-6 rosiatic">
@@ -54,6 +59,7 @@ picture: string; -->
           </div>
 
 
+        </div>
       </div>
 
   </div>
@@ -61,4 +67,5 @@ picture: string; -->
   </div>
 
 </div>
-</body>
+
+
