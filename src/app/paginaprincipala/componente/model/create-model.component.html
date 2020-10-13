@@ -3,19 +3,19 @@
     <h3 class="panel-title text-center titlu">Adauga Produse</h3>
   </div>
   <div class="panel-body">
-
+    <form #myform="ngForm" (ngSubmit)="submitForm(myform.value)">
     <div class="form-group text-center rosiatic">
       <label>Denumire</label>
     <div class="container-md">
        <div class="col-xs-6 margine3d">
-          <input #denumire type="text" class="form-control text-center font-weight-bold">
+          <input #denumire name="name" type="text" ngModel class="form-control text-center font-weight-bold">
       </div>
     </div>
     <div class="form-group text-center rosiatic">
       <label>Descriere</label>
       <div class="container-md">
         <div class="col-xs-6 margine3d">
-      <input #descriere type="text" class="form-control text-center font-weight-bold" >
+      <input #descriere type="text" name="descriere" ngModel class="form-control text-center font-weight-bold" >
         </div>
       </div>
     </div>
@@ -24,7 +24,7 @@
       <label>Pret</label>
       <div class="container-md">
         <div class="col-xs-6 margine3d">
-          <input #pret type="number" class="form-control text-center font-weight-bold" >
+          <input #pret type="number" name="pret" ngModel class="form-control text-center font-weight-bold" >
         </div>
       </div>
     </div>
@@ -33,7 +33,7 @@
       <label>Data lansarii</label>
       <div class="container-md">
         <div class="col-xs-6 margine3d">
-          <input #datalansarii type="date" class="form-control text-center font-weight-bold" >
+          <input #datalansarii type="date" name="datalansarii" ngModel class="form-control text-center font-weight-bold" >
         </div>
       </div>
     </div>
@@ -42,7 +42,7 @@
       <label>Categorie</label>
       <div class="container-md">
         <div class="col-xs-6 margine3d">
-          <input #categorie type="text" class="form-control text-center font-weight-bold" >
+          <input #categorie type="text" name="categorie" ngModel class="form-control text-center font-weight-bold" >
         </div>
       </div>
 
@@ -52,15 +52,16 @@
       <label>Link Imagine</label>
       <div class="container-md">
         <div class="col-xs-6 margine3d">
-          <input #link type="text" class="form-control text-center font-weight-bold" >
+          <input #link type="text" ngModel name="picture" class="form-control text-center font-weight-bold" >
         </div>
       </div>
     </div>
 
   </div>
   <div class="panel-footer text-center">
-    <button (click)="getVal(denumire.value,descriere.value,pret.value,datalansarii.value,categorie.value,link.value)" class="btn btn-danger">Salveaza</button>
+   <!-- <button class="btn btn-danger" value="Submit">Salveaza</button> -->
+    <input type="submit" value="Submit" />
   </div>
-
+    </form>
 </div>
 

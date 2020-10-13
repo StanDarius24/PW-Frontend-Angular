@@ -25,5 +25,12 @@ export class ProduseService {
   getProductFromCategory(catName: string) : Observable<any[]>{
   return this.http.get<any>(this.SERVER + '/products/category' + catName);
 }
+  getSingleProductbyname(text : string): Observable<any> {
+    console.log(text);
+    return this.http.get<any>(this.SERVER + '/products/name/' + text);
+  }
 
+  scrieinbazadedate(formdata){
+    return this.http.post<any>(this.SERVER + '/products/list' ,formdata);
+  }
 }

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ProduseService} from '../../services/produse.service';
-import { Router} from '@angular/router';
+import {ActivatedRoute, ParamMap, Router} from '@angular/router';
+import {map} from 'rxjs/operators';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
@@ -9,7 +10,7 @@ import { Router} from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   modele: any[]=[];
-
+  product;
   constructor(private produseService: ProduseService, private router: Router) {
   }
 
@@ -24,6 +25,7 @@ export class HeaderComponent implements OnInit {
   }
   events(text:string){
     console.log(text);
+    this.router.navigate(['/products/name/' + text]).then();
   }
 
 }

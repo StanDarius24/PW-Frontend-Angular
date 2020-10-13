@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {ProduseService} from '../../services/produse.service';
 import {map} from 'rxjs/operators';
-import {Model} from '../model/model.bazadedate';
 declare let $: any;
 @Component({
   selector: 'app-produs',

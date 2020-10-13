@@ -26,7 +26,7 @@ export class ListaModelComponent implements OnInit {
   } )
   }
 
-  selectProduct(id:Number) {
+  selectProduct(id:number) {
     this.router.navigate(['/produs', id]).then();
     console.log(id);
   }
