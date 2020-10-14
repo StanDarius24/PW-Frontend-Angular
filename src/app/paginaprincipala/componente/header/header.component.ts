@@ -25,7 +25,7 @@ export class HeaderComponent implements OnInit {
   }
   events(text:string){
     console.log(text);
-    this.router.navigate(['/products/name/' + text]).then();
+    this.router.navigate(['/search/',text]).then();
   }
 
 }

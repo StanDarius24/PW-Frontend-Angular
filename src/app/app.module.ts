@@ -15,13 +15,15 @@ import {ProduseService} from './paginaprincipala/services/produse.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProdusComponent} from './paginaprincipala/componente/produs/produs.component';
 import {LoginComponent} from './paginaprincipala/componente/login/login.component';
+import {SearchComponent} from './paginaprincipala/componente/search/search.component';
 
 const appRoutes: Routes = [
   { path: 'list', component: ListaModelComponent },
   { path: 'produs/:id', component: ProdusComponent },
   { path: 'create', component: CreateModelComponent },
   { path: '', redirectTo: '/list' , pathMatch: 'full' },
-  { path: 'login', component: LoginComponent}
+  { path: 'login', component: LoginComponent},
+  { path: 'search/:name', component: SearchComponent }
 
   ];
 @NgModule({

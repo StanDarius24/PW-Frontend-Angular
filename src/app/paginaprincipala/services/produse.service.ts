@@ -26,8 +26,7 @@ export class ProduseService {
   return this.http.get<any>(this.SERVER + '/products/category' + catName);
 }
   getSingleProductbyname(text : string): Observable<any> {
-    console.log(text);
-    return this.http.get<any>(this.SERVER + '/products/name/' + text);
+    return this.http.get<any>(this.SERVER + '/products/search/' + text);
   }
 
   scrieinbazadedate(formdata){
