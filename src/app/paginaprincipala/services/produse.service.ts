@@ -3,6 +3,7 @@ import {HttpClient, HttpHeaders } from '@angular/common/http';
 import {environment} from '../../../environments/environment';
 import {Observable} from 'rxjs';
 import {Model} from '../componente/model/model.bazadedate';
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +24,7 @@ export class ProduseService {
   }
 
   getProductFromCategory(catName: string) : Observable<any[]>{
-  return this.http.get<any>(this.SERVER + '/products/category' + catName);
+  return this.http.get<any>(this.SERVER + '/products/category/' + catName);
 }
   getSingleProductbyname(text : string): Observable<any> {
     return this.http.get<any>(this.SERVER + '/products/search/' + text);
@@ -31,5 +32,9 @@ export class ProduseService {
 
   scrieinbazadedate(formdata){
     return this.http.post<any>(this.SERVER + '/products/list' ,formdata);
+  }
+  stergedupaId(id: number): Observable<any>{
+    console.log("Stergere cu " + id);
+    return this.http.delete<any>(this.SERVER + '/products/sterge/' + id);
   }
 }

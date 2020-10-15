@@ -16,6 +16,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { ProdusComponent} from './paginaprincipala/componente/produs/produs.component';
 import {LoginComponent} from './paginaprincipala/componente/login/login.component';
 import {SearchComponent} from './paginaprincipala/componente/search/search.component';
+import {StergeComponent} from './paginaprincipala/componente/sterge/sterge.component';
+
+
 
 const appRoutes: Routes = [
   { path: 'list', component: ListaModelComponent },
@@ -23,7 +26,9 @@ const appRoutes: Routes = [
   { path: 'create', component: CreateModelComponent },
   { path: '', redirectTo: '/list' , pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
-  { path: 'search/:name', component: SearchComponent }
+  { path: 'search/:name', component: SearchComponent },
+  {path: 'sterge' , component: StergeComponent}
+
 
   ];
 @NgModule({
@@ -33,7 +38,8 @@ const appRoutes: Routes = [
     FooterComponent,
     CreateModelComponent,
     ProdusComponent,
-    ListaModelComponent
+    ListaModelComponent,
+    StergeComponent
   ],
   imports: [
     BrowserModule,

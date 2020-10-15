@@ -48,19 +48,19 @@
     </li>
 
     <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Categorii
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#" >Placa video</a>
-        <a class="dropdown-item" href="#">Memorii</a>
-        <a class="dropdown-item" href="#">Procesor</a>
-        <a class="dropdown-item" href="#">Carcasa</a>
-        <a class="dropdown-item" href="#">Placa de baza</a>
-      </div>
-    </li>
-    <form class="form-inline" action="/action_page.php">
+
+
+        <select (change)="logprocesor($event)">
+          <option class="dropdown-item-text">Alege Categorie</option>
+        <option class="dropdown-item" value="Placa video"  href="#">Placa video</option>
+        <option class="dropdown-item" value="Memorii" href="#" >Memorii</option>
+        <option class="dropdown-item" value="Procesor" href="#" >Procesor</option>
+        <option class="dropdown-item" value="Carcasa"href="#" >Carcasa</option>
+        <option class="dropdown-item" value="Placa de baza"href="#" >Placa de baza</option>
+        </select>
+
+
+    <form class="form-inline" >
       <input #myinput type="text" placeholder="Search here">
       <button class="btn-danger" (click)="events(myinput.value)">Search</button>
     </form>

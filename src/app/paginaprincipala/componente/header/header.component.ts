@@ -8,7 +8,7 @@ import {map} from 'rxjs/operators';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-
+  selectedCategory: string = '';
   modele: any[]=[];
   product;
   constructor(private produseService: ProduseService, private router: Router) {
@@ -19,10 +19,23 @@ export class HeaderComponent implements OnInit {
       this.modele = prod.products;
 
   })}
+
+  logprocesor(event: any){
+
+    this.selectedCategory = event.target.value;
+    if(this.selectedCategory != "Alege Categorie") {
+      console.log(this.selectedCategory);
+
+  }}
+
+
+
+  /*
+  dupa id
   logMessage(value: Number){
       this.router.navigate(['/produs', value]).then();
       console.log(value);
-  }
+  }*/
   events(text:string){
     console.log(text);
     this.router.navigate(['/search/',text]).then();

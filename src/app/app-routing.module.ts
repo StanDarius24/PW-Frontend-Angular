@@ -4,6 +4,9 @@ import {ProdusComponent} from './paginaprincipala/componente/produs/produs.compo
 import {CreateModelComponent} from './paginaprincipala/componente/model/create-model.component';
 import {LoginComponent} from './paginaprincipala/componente/login/login.component';
 import {SearchComponent} from './paginaprincipala/componente/search/search.component';
+import {StergeComponent} from './paginaprincipala/componente/sterge/sterge.component';
+
+
 
 const routes: Routes = [
   { path: 'list', component: ListaModelComponent },
@@ -11,7 +14,8 @@ const routes: Routes = [
   { path: 'create', component: CreateModelComponent },
   { path: '', redirectTo: '/list' , pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
-  { path: 'search/:name', component: SearchComponent }
+  { path: 'search/:name', component: SearchComponent },
+  {path: 'sterge' , component: StergeComponent}
 ];
 
 @NgModule({

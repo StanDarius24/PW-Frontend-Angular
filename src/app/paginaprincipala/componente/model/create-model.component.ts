@@ -11,11 +11,11 @@ import {HttpClient} from '@angular/common/http';
 export class CreateModelComponent implements OnInit {
 
   modele: Model;
-  constructor(private prod : ProduseService) { }
+  constructor(private prod: ProduseService, private router: Router) { }
   ngOnInit(): void {
   }
 
-  submitForm(formData) :void{
+  submitForm(formData): void{
     console.log(formData);
     this.prod.scrieinbazadedate(formData).subscribe(
       res => {
@@ -23,4 +23,11 @@ export class CreateModelComponent implements OnInit {
       }
     );
   }
+
+  mergemlaStergere()
+  {
+
+    this.router.navigate(['/sterge']).then();
+  }
+
 }
