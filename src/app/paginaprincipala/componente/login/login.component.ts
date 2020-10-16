@@ -17,7 +17,7 @@ export class LoginComponent implements OnInit {
   verificare(nume: String, parola: String) {
     if (nume == "admin" && parola == "admin") {
       console.log("Merge");
-      this.router.navigate(['/create']).then();
+      this.router.navigate(['/adminhub']).then();
     }
     else
       console.log("Nu merge");

@@ -79,3 +79,14 @@ span.psw {
     width: 100%;
   }
 }
+.curcubeu {
+  animation: color-change 5s infinite;
+}
+
+@keyframes color-change {
+  0% { color: red; }
+  25% {color: green; }
+  50% { color: blue; }
+  75% { color: yellow;}
+  100% { color: red; }
+}

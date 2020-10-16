@@ -5,6 +5,9 @@ import {CreateModelComponent} from './paginaprincipala/componente/model/create-m
 import {LoginComponent} from './paginaprincipala/componente/login/login.component';
 import {SearchComponent} from './paginaprincipala/componente/search/search.component';
 import {StergeComponent} from './paginaprincipala/componente/sterge/sterge.component';
+import {EditareComponent} from './paginaprincipala/componente/editare/editare.component';
+import {AdminhubComponent} from './paginaprincipala/componente/adminhub/adminhub.component';
+import {CategorieComponent} from './paginaprincipala/componente/categorie/categorie.component';
 
 
 
@@ -15,7 +18,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/list' , pathMatch: 'full' },
   { path: 'login', component: LoginComponent},
   { path: 'search/:name', component: SearchComponent },
-  {path: 'sterge' , component: StergeComponent}
+  {path: 'sterge' , component: StergeComponent},
+  {path: 'editare', component: EditareComponent},
+  {path: 'adminhub' ,component: AdminhubComponent},
+  {path: 'categorie/:nume' , component: CategorieComponent}
 ];
 
 @NgModule({

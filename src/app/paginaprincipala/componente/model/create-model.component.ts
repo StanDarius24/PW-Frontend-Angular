@@ -24,10 +24,6 @@ export class CreateModelComponent implements OnInit {
     );
   }
 
-  mergemlaStergere()
-  {
 
-    this.router.navigate(['/sterge']).then();
-  }
 
 }

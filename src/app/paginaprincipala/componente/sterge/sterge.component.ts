@@ -20,20 +20,12 @@ export class StergeComponent implements OnInit {
   }
 
   stergere(id:number){
-    console.log(id);
+    console.log(id + "Stergere reusita");
     this.produseServicii.stergedupaId(id).subscribe(
       res => {
         console.log(res);
       }
     );
   }
-  submitForm(model)
-  {
-    console.log(model);
-    this.produseServicii.editeazadupaNume(model).subscribe(
-      res => {
-        console.log(res);
-      }
-    )
-  }
+
 }

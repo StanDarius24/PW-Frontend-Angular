@@ -21,12 +21,10 @@ export class HeaderComponent implements OnInit {
   })}
 
   logprocesor(event: any){
-
-    this.selectedCategory = event.target.value;
-    if(this.selectedCategory != "Alege Categorie") {
-      console.log(this.selectedCategory);
-
-  }}
+    this.selectedCategory=event.target.value;
+    console.log(this.selectedCategory);
+    this.router.navigate(['/categorie/', this.selectedCategory]).then();
+  }
 
 
 

@@ -24,7 +24,7 @@ export class ProduseService {
   }
 
   getProductFromCategory(catName: string) : Observable<any[]>{
-  return this.http.get<any>(this.SERVER + '/products/category/' + catName);
+  return this.http.get<any>(this.SERVER + '/products/categorie/' + catName);
 }
   getSingleProductbyname(text : string): Observable<any> {
     return this.http.get<any>(this.SERVER + '/products/search/' + text);
