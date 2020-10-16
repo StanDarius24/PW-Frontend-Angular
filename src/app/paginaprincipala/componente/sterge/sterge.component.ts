@@ -27,4 +27,13 @@ export class StergeComponent implements OnInit {
       }
     );
   }
+  submitForm(model)
+  {
+    console.log(model);
+    this.produseServicii.editeazadupaNume(model).subscribe(
+      res => {
+        console.log(res);
+      }
+    )
+  }
 }

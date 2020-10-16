@@ -37,4 +37,7 @@ export class ProduseService {
     console.log("Stergere cu " + id);
     return this.http.delete<any>(this.SERVER + '/products/sterge/' + id);
   }
+  editeazadupaNume(formdata){
+    return this.http.put(this.SERVER + '/products/editare/nume' ,formdata);
+  }
 }
