@@ -1,29 +1,3 @@
-<!--
-<form #myform="ngForm" (ngSubmit)="submitForm(myform.value)">
-  <div class="form-group text-center rosiatic titlu">
-    <label>Nume vechi</label>
-    <div class="container-md text-center">
-      <div>
-
-      </div>
-      <div class="col-sm-4 margine3d pozitie">
-        <input #numevechi name="name" ngModel type="text"  class="form-control text-center font-weight-bold">
-      </div>
-    </div>
-
-    <label>Nume nou</label>
-    <div class="container-md">
-      <div class="col-md-4 margine3d text-center pozitie">
-        <input #numenou name="nou" ngModel type="text"  class="form-control text-center font-weight-bold">
-      </div>
-    </div>
-
-    <div class="panel-footer text-center">
-
-      <input type="submit" value="Submit" />
-    </div>
-
--->
 <div *ngFor="let Mod of modele">
   <div class="form-group text-center ">
     <div class="container-md"  >
@@ -34,5 +8,7 @@
       </div>
     </div>
   </div>
+
 </div>
 
+<div class="text-center titlu"> {{ mybool == true ? "Redirectionare spre pagina editare in " + sec + " secunde" : ""}} </div>

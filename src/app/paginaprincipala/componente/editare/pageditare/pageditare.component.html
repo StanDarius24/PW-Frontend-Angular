@@ -1,0 +1,60 @@
+
+<div class="container-md">
+  <div class="titlu double titlu">{{product.name}}</div>
+  <img class="imgeClass left" [src]="product.img" height="350px"/>
+
+  <div class="left ods rosiatic">Pret: {{product.pret}} lei</div>
+  <div class="left ods rosiatic">Categorie: {{product.categorie}}</div>
+  <div class="left ods rosiatic">Data: {{product.data}}</div>
+  <div class="left ods rosiatic">Descriere: {{product.descriere}}</div>
+</div>
+
+<form #myform="ngForm" (ngSubmit)="submitForm(myform.value)">
+  <div class="form-group text-center rosiatic titlu">
+    <label>Nume nou</label>
+    <div class="container-sm">
+      <div>
+
+      </div>
+      <div class="col-sm-6 ">
+        <input  name="name" ngModel type="text"  class="form-control text-center font-weight-bold">
+      </div>
+    </div>
+
+    <label>Pret nou</label>
+    <div class="container-md">
+      <div class="col-md-4">
+        <input  name="pret" ngModel type="text"  class="form-control text-center font-weight-bold">
+      </div>
+    </div>
+
+    <label>Descriere noua</label>
+    <div class="container-md">
+      <div class="col-md-4">
+        <input  name="descriere" ngModel type="text"  class="form-control text-center font-weight-bold">
+      </div>
+    </div>
+
+    <label>Datalansarii noua</label>
+    <div class="container-md">
+      <div class="col-md-4">
+        <input  name="datalansarii" ngModel type="text"  class="form-control text-center font-weight-bold">
+      </div>
+    </div>
+    <label>Poza noua</label>
+    <div class="container-md">
+      <div class="col-md-4">
+        <input  name="picture" ngModel type="text"  class="form-control text-center font-weight-bold">
+      </div>
+    </div>
+    <label>Categorie noua</label>
+    <div class="container-md">
+      <div class="col-md-4">
+        <input  name="categorie" ngModel type="text"  class="form-control text-center font-weight-bold">
+      </div>
+    </div>
+
+    <div class="panel-footer text-center">
+      <input type="submit" value="Submit" />
+    </div>
+    <div class="text-center titlu"> {{ mybool == true ? "Redirectionare spre pagina editare in " + sec + " secunde" : ""}} </div>

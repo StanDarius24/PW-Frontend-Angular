@@ -9,8 +9,9 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./create-model.component.css']
 })
 export class CreateModelComponent implements OnInit {
-
+  mybool: boolean =false;
   modele: Model;
+  sec:number =3;
   constructor(private prod: ProduseService, private router: Router) { }
   ngOnInit(): void {
   }
@@ -22,6 +23,25 @@ export class CreateModelComponent implements OnInit {
         console.log(res);
       }
     );
+    this.mybool =true;
+    setTimeout(() =>
+      {
+        this.sec= this.sec -1;
+        setTimeout(() =>
+          {
+            this.sec= this.sec -1;
+            setTimeout(() =>
+              {
+                this.sec= this.sec -1;
+                this.router.navigate(['/list']).then();
+              },
+              1000);
+          },
+          1000);
+      },
+      1000);
+
+
   }
 
 

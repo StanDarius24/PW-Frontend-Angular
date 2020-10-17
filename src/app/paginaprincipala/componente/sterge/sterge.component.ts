@@ -9,6 +9,8 @@ import {Router} from '@angular/router';
 })
 export class StergeComponent implements OnInit {
   modele: any[] = [];
+  mybool: boolean =false;
+  sec:number=3;
   constructor(private produseServicii: ProduseService,private router: Router) { }
 
   ngOnInit(): void {this.produseServicii.citesteDinBazaDeDATE().subscribe((prod: {count: Number, products: any[]}) => {
@@ -26,6 +28,24 @@ export class StergeComponent implements OnInit {
         console.log(res);
       }
     );
+    this.mybool=true;
+    setTimeout(() =>
+      {
+        this.sec= this.sec -1;
+        setTimeout(() =>
+          {
+            this.sec= this.sec -1;
+            setTimeout(() =>
+              {
+                this.sec= this.sec -1;
+                this.router.navigate(['/list']).then();
+              },
+              1000);
+          },
+          1000);
+      },
+      1000);
+
   }
 
 }

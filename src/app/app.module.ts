@@ -20,6 +20,7 @@ import {StergeComponent} from './paginaprincipala/componente/sterge/sterge.compo
 import {EditareComponent} from './paginaprincipala/componente/editare/editare.component';
 import {AdminhubComponent} from './paginaprincipala/componente/adminhub/adminhub.component';
 import {CategorieComponent} from './paginaprincipala/componente/categorie/categorie.component';
+import {PageditareComponent} from './paginaprincipala/componente/editare/pageditare/pageditare.component';
 
 
 
@@ -33,11 +34,13 @@ const appRoutes: Routes = [
   {path: 'sterge' , component: StergeComponent},
   {path: 'editare', component: EditareComponent},
   {path: 'adminhub' ,component: AdminhubComponent},
-  {path: 'categorie/:nume' , component: CategorieComponent}
+  {path: 'categorie/:nume' , component: CategorieComponent},
+  {path: 'editare/:id' , component:PageditareComponent}
 
   ];
 @NgModule({
   declarations: [
+    PageditareComponent,
     AppComponent,
     HeaderComponent,
     FooterComponent,
