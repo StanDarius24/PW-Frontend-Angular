@@ -1,60 +1,102 @@
 
 <div class="container-md">
-  <div class="titlu double titlu">{{product.name}}</div>
-  <img class="imgeClass left" [src]="product.img" height="350px"/>
+  <div class="row">
+  <div class="col-sm-4"></div>
+    <div class="col-sm-7">
+  <div class="titlu double ">{{product.name}}</div>
+  <img class="imgeClass" [src]="product.img" height="350px"/>
 
-  <div class="left ods rosiatic">Pret: {{product.pret}} lei</div>
-  <div class="left ods rosiatic">Categorie: {{product.categorie}}</div>
-  <div class="left ods rosiatic">Data: {{product.data}}</div>
-  <div class="left ods rosiatic">Descriere: {{product.descriere}}</div>
+  <div class=" ods rosiatic">Pret: {{product.pret}} lei</div>
+  <div class="ods rosiatic">Categorie: {{product.categorie}}</div>
+  <div class=" ods rosiatic">Data: {{product.data}}</div>
+  <div class=" ods rosiatic ">Descriere: {{product.descriere}}</div>
+      <div class="col-sm-3"></div>
 </div>
-
+</div>
+</div>
 <form #myform="ngForm" (ngSubmit)="submitForm(myform.value)">
   <div class="form-group text-center rosiatic titlu">
     <label>Nume nou</label>
     <div class="container-sm">
-      <div>
+      <div class="row">
+    <div class="col-sm-3">
+    </div>
+      <div class="col-sm-6">
 
+      <input  name="name"  ngModel type="text" [(ngModel)]="product.name"  class="form-control text-center font-weight-bold">
       </div>
-      <div class="col-sm-6 ">
-        <input  name="name" ngModel type="text"  class="form-control text-center font-weight-bold">
+        <div class="col-sm-3">
       </div>
+
+
+  </div>
     </div>
 
     <label>Pret nou</label>
-    <div class="container-md">
-      <div class="col-md-4">
-        <input  name="pret" ngModel type="text"  class="form-control text-center font-weight-bold">
+    <div class="container-sm">
+      <div class="row">
+        <div class="col-sm-3">
+        </div>
+      <div class="col-md-6">
+        <input  name="pret" ngModel type="text" [(ngModel)]="product.pret" class="form-control text-center font-weight-bold">
       </div>
+        <div class="col-sm-3">
+        </div>
     </div>
+    </div>
+
 
     <label>Descriere noua</label>
     <div class="container-md">
-      <div class="col-md-4">
-        <input  name="descriere" ngModel type="text"  class="form-control text-center font-weight-bold">
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+      <div class="col-md-6">
+        <input  name="descriere" ngModel type="text" [(ngModel)]="product.descriere"  class="form-control text-center font-weight-bold">
       </div>
+        <div class="col-sm-3">
+
+        </div>
+    </div>
     </div>
 
     <label>Datalansarii noua</label>
     <div class="container-md">
-      <div class="col-md-4">
-        <input  name="datalansarii" ngModel type="text"  class="form-control text-center font-weight-bold">
+      <div class="row">
+
+
+
+      <div class="col-sm-3"></div>
+      <div class="col-md-6">
+        <input  name="datalansarii" ngModel type="text" [(ngModel)]="product.data"  class="form-control text-center font-weight-bold">
       </div>
     </div>
+    </div>
+
     <label>Poza noua</label>
     <div class="container-md">
-      <div class="col-md-4">
-        <input  name="picture" ngModel type="text"  class="form-control text-center font-weight-bold">
+      <div class="row">
+        <div class="col-sm-3">
+
+        </div>
+      <div class="col-md-6">
+        <input  name="picture" ngModel type="text" [(ngModel)]="product.img" class="form-control text-center font-weight-bold">
       </div>
+    </div>
     </div>
     <label>Categorie noua</label>
     <div class="container-md">
-      <div class="col-md-4">
-        <input  name="categorie" ngModel type="text"  class="form-control text-center font-weight-bold">
+      <div class="row">
+        <div class="col-sm-3"></div>
+      <div class="col-md-6">
+        <input  name="categorie" ngModel type="text" [(ngModel)]="product.categorie"  class="form-control text-center font-weight-bold">
       </div>
+    </div>
     </div>
 
     <div class="panel-footer text-center">
-      <input type="submit" value="Submit" />
+      <input style="margin-top: 2%; border-radius: 20px; background-color: red; color: wheat" type="submit" value="Edit" />
     </div>
     <div class="text-center titlu"> {{ mybool == true ? "Redirectionare spre pagina editare in " + sec + " secunde" : ""}} </div>
+  </div>

@@ -35,7 +35,7 @@ export class PageditareComponent implements OnInit {
 
   }
 
-  submitForm(model )
+  submitForm(model)
   {
     console.log(this.product);
     if(model.name!= this.product.name && model.name != "")
