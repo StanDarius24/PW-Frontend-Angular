@@ -26,6 +26,6 @@ export class AdminhubComponent implements OnInit {
   }
   mergemlaCategorie()
   {
-
+    this.router.navigate(['/categ']).then();
   }
 }

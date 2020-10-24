@@ -1,0 +1,32 @@
+<form #myform="ngForm" (ngSubmit)="submitForm(myform.value)">
+  <label>Denumire</label>
+  <div class="container-md">
+    <div class="col-xs-6 margine3d">
+      <input #denumire name="name" ngModel type="text"  class="form-control text-center font-weight-bold">
+    </div>
+    <div class="col-xs-6 text-center">
+    <input type="submit" value="Submit" />
+  </div>
+  </div>
+
+
+<div *ngFor="let Mod of modele">
+  <div class="form-group text-center ">
+    <div class="container-md"  >
+      <div class="col-xs-6 inchis" >
+        <div class="titlu">DENUMIRE: {{Mod.name}}</div>
+        <div class="titlu">DATA: {{Mod.data}}</div>
+        <button class="btn-danger" (click)="stergere(Mod.id)">Sterge</button>
+        <button class="btn-danger" (click)="submitForm(Mod.id)">Editare</button>
+
+
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<div class="text-center titlu"> {{ mybool == true ? "Redirectionare spre home in " + sec + " secunde" : ""}} </div>
+

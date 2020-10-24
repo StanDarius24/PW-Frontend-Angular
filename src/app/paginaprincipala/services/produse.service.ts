@@ -33,6 +33,10 @@ export class ProduseService {
   scrieinbazadedate(formdata){
     return this.http.post<any>(this.SERVER + '/products/list' ,formdata);
   }
+  scrieinbazadedate2(formdata,val){
+    return this.http.post<any>(this.SERVER + '/products/list/'+val ,formdata);
+  }
+
   stergedupaId(id: number): Observable<any>{
     console.log("Stergere cu " + id);
     return this.http.delete<any>(this.SERVER + '/products/sterge/' + id);

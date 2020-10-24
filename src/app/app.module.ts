@@ -21,6 +21,7 @@ import {AdminhubComponent} from './paginaprincipala/componente/adminhub/adminhub
 import {CategorieComponent} from './paginaprincipala/componente/categorie/categorie.component';
 import {PageditareComponent} from './paginaprincipala/componente/editare/pageditare/pageditare.component';
 import {CategorieService} from './paginaprincipala/services/categorie.service';
+import {HubcategorieComponent} from './paginaprincipala/componente/hubcategorie/hubcategorie.component';
 
 
 
@@ -35,7 +36,8 @@ const appRoutes: Routes = [
   {path: 'editare', component: EditareComponent},
   {path: 'adminhub' ,component: AdminhubComponent},
   {path: 'categorie/:nume' , component: CategorieComponent},
-  {path: 'editare/:id' , component:PageditareComponent}
+  {path: 'editare/:id' , component:PageditareComponent},
+  {path: 'categ', component:HubcategorieComponent},
 
   ];
 @NgModule({
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     AdminhubComponent,
     CategorieComponent,
     SearchComponent,
-    HeaderComponent
+    HeaderComponent,
+    HubcategorieComponent
   ],
   imports: [
     BrowserModule,

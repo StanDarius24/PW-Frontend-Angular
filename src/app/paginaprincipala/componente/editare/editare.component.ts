@@ -21,7 +21,7 @@ export class EditareComponent implements OnInit {
   }
   submitForm(id) :void
   {
-    this.router.navigate(['/editare/' +id]).then();
+
   }
 
 }

@@ -15,7 +15,7 @@ export class CategorieComponent implements OnInit {
   name: string;
   product;
   model: any[];
-  varx:string ;
+  varx:string ='fail';
   ngOnInit(): void {
 
     this.route.paramMap.pipe(

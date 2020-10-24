@@ -4,13 +4,15 @@ import { ServerModule } from '@angular/platform-server';
 import { AppModule } from './app.module';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './paginaprincipala/componente/header/header.component';
+import {CreateModelComponent} from './paginaprincipala/componente/model/create-model.component';
 
 
 @NgModule({
   imports: [
     AppModule,
     ServerModule,
-    HeaderComponent
+    HeaderComponent,
+    CreateModelComponent
   ],
   bootstrap: [AppComponent],
 })

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {map} from 'rxjs/operators';
 import {ActivatedRoute, ParamMap} from '@angular/router';
 import {ProduseService} from '../../services/produse.service';
+import {CategorieService} from '../../services/categorie.service';
 
 @Component({
   selector: 'app-search',
@@ -11,8 +12,9 @@ import {ProduseService} from '../../services/produse.service';
 export class SearchComponent implements OnInit {
   name: string;
   product;
+  catego :string;
   constructor(private route: ActivatedRoute,
-              private productService: ProduseService) { }
+              private productService: ProduseService,private cate :CategorieService) { }
 
   ngOnInit(): void {
     this.route.paramMap.pipe(
@@ -24,6 +26,9 @@ export class SearchComponent implements OnInit {
       this.name = prodName;
       this.productService.getSingleProductbyname(this.name).subscribe(prod => {
         this.product = prod;
+        this.cate.getSinglecategory(this.product.categorie).subscribe(prom =>{
+          this.catego = prom.nume;
+        })
         console.warn(this.product);
       });
     });

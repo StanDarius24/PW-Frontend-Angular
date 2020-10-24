@@ -39,12 +39,20 @@
     </div>
 
     <div class="form-group text-center rosiatic">
+
+      <!--
       <label>Categorie</label>
       <div class="container-md">
         <div class="col-xs-6 margine3d">
           <input #categorie type="text" name="categorie" ngModel class="form-control text-center font-weight-bold" >
         </div>
       </div>
+    -->
+      <select formControlName="orders" id="orders" name="categorie" ngModel (change)="submit($event)">
+        <option *ngFor="let Mod of mod" >
+          {{Mod.id}} {{Mod.name}}
+        </option>
+      </select>
 
         </div>
 

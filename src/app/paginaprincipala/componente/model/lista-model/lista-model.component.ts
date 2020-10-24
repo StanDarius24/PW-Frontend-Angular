@@ -21,25 +21,16 @@ export class ListaModelComponent implements OnInit {
   modele: any[] = [];
   numecat:string ='';
   categ: string[] =[];
-  mynewmodel : any[] =[];
   i:number;
   ngOnInit(): void {
   this.produseService.citesteDinBazaDeDATE().subscribe((prod: {count: Number, products: any[]}) => {
   this.modele = prod.products;
-  console.log(this.modele);
-
-    for(this.i=0;this.i<=this.modele.length;this.i=this.i+1){
-    this.cat.getSinglecategory(this.modele[this.i].categorie).subscribe(prodname => {
-     this.categ.push(prodname.name);
-    })
-    }
-    console.log(this.categ);
-
-  } );
-
-
-
+  });
   }
+
+
+
+
 /*
 this.route.paramMap.pipe(
       map((param: ParamMap) => {
@@ -53,6 +44,14 @@ this.route.paramMap.pipe(
         console.warn(this.product);
       });
     });
+
+
+for(this.i=0;this.i<this.modele.length;this.i=this.i+1){
+    this.cat.getSinglecategory(this.modele[this.i].categorie).subscribe(prodname => {
+     this.categ.push(prodname.name);
+    this.model[i].setValue["categorie"]=prodname.name;
+    })
+    }
 
   */
 
