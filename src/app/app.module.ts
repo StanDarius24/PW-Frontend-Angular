@@ -1,7 +1,6 @@
 
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './paginaprincipala/componente/header/header.component';
 import { FooterComponent } from './paginaprincipala/componente/footer/footer.component';
@@ -10,7 +9,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { StoreModule } from '@ngrx/store';
 import {ListaModelComponent} from './paginaprincipala/componente/model/lista-model/lista-model.component';
 import {CreateModelComponent} from './paginaprincipala/componente/model/create-model.component';
-import { FormsModule , ReactiveFormsModule } from '@angular/forms';
+import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {ProduseService} from './paginaprincipala/services/produse.service';
 import {HttpClientModule} from '@angular/common/http';
 import { ProdusComponent} from './paginaprincipala/componente/produs/produs.component';
@@ -21,6 +20,7 @@ import {EditareComponent} from './paginaprincipala/componente/editare/editare.co
 import {AdminhubComponent} from './paginaprincipala/componente/adminhub/adminhub.component';
 import {CategorieComponent} from './paginaprincipala/componente/categorie/categorie.component';
 import {PageditareComponent} from './paginaprincipala/componente/editare/pageditare/pageditare.component';
+import {CategorieService} from './paginaprincipala/services/categorie.service';
 
 
 
@@ -42,7 +42,6 @@ const appRoutes: Routes = [
   declarations: [
     PageditareComponent,
     AppComponent,
-    HeaderComponent,
     FooterComponent,
     CreateModelComponent,
     ProdusComponent,
@@ -50,7 +49,9 @@ const appRoutes: Routes = [
     StergeComponent,
     EditareComponent,
     AdminhubComponent,
-    CategorieComponent
+    CategorieComponent,
+    SearchComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -63,7 +64,8 @@ const appRoutes: Routes = [
     StoreModule.forRoot({}, {}),
 
   ],
-  providers: [ProduseService],
+  providers: [ProduseService,
+              CategorieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

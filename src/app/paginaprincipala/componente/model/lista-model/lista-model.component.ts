@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {ProduseService} from '../../../services/produse.service';
 import {Router} from "@angular/router";
+import {CategorieService} from '../../../services/categorie.service';
 
 
 
@@ -13,23 +14,52 @@ import {Router} from "@angular/router";
 })
 
 export class ListaModelComponent implements OnInit {
-  constructor(private produseService: ProduseService, private router: Router) {
+  constructor(private produseService: ProduseService, private router: Router,private cat :CategorieService) {
 
   }
+  ids:number =0;
   modele: any[] = [];
-
-
+  numecat:string ='';
+  categ: string[] =[];
+  mynewmodel : any[] =[];
+  i:number;
   ngOnInit(): void {
   this.produseService.citesteDinBazaDeDATE().subscribe((prod: {count: Number, products: any[]}) => {
   this.modele = prod.products;
   console.log(this.modele);
-  } )
-  }
 
-  selectProduct(id:number) {
-    this.router.navigate(['/produs', id]).then();
-    console.log(id);
+    for(this.i=0;this.i<=this.modele.length;this.i=this.i+1){
+    this.cat.getSinglecategory(this.modele[this.i].categorie).subscribe(prodname => {
+     this.categ.push(prodname.name);
+    })
+    }
+    console.log(this.categ);
+
+  } );
+
+
+
   }
+/*
+this.route.paramMap.pipe(
+      map((param: ParamMap) => {
+        // @ts-ignore
+        return param.params.id;
+      })
+    ).subscribe(prodId => {
+      this.id = prodId;
+      this.productService.getSingleProduct(this.id).subscribe(prod => {
+        this.product = prod;
+        console.warn(this.product);
+      });
+    });
+
+  */
+
+  selectProduct(id: number) {
+   this.router.navigate(['/produs', id]).then();
+    console.log(id);
+}
 
 
 

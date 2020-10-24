@@ -11,17 +11,17 @@
       <a class="nav-link" routerLink="login">Login</a>
     </li>
 
-    <!-- Dropdown -->
 
 
-        <select (change)="logprocesor($event)">
-          <option class="dropdown-item-text">Alege Categorie</option>
-        <option class="dropdown-item" value="Placa video"  href="#">Placa video</option>
-        <option class="dropdown-item" value="Memorii" href="#" >Memorii</option>
-        <option class="dropdown-item" value="Procesor" href="#" >Procesor</option>
-        <option class="dropdown-item" value="Carcasa"href="#" >Carcasa</option>
-        <option class="dropdown-item" value="Placa de baza"href="#" >Placa de baza</option>
-        </select>
+      <select formControlName="orders" id="orders" (change)="submit($event)">
+        <option *ngFor="let Mod of modele" >
+          {{Mod.id}} {{Mod.name}}
+        </option>
+      </select>
+
+
+
+
 
 
     <form class="form-inline" >
