@@ -3,6 +3,7 @@ import {ActivatedRoute, ParamMap, Router} from '@angular/router';
 import {ProduseService} from '../../../services/produse.service';
 import {map} from 'rxjs/operators';
 import {NgForm} from '@angular/forms';
+import {CategorieService} from '../../../services/categorie.service';
 
 @Component({
   selector: 'app-pageditare',
@@ -13,10 +14,13 @@ export class PageditareComponent implements OnInit {
   nume: string;
   id: number;
   product;
+  modele: any[]=[];
+  selectedCategory:string;
   sec: number =3;
   mybool: boolean =false;
   constructor(private route: ActivatedRoute,private router : Router,
-              private productService: ProduseService) { }
+              private productService: ProduseService,
+              private category : CategorieService) { }
 
   ngOnInit(): void {
     this.route.paramMap.pipe(
@@ -29,6 +33,11 @@ export class PageditareComponent implements OnInit {
       this.productService.getSingleProduct(this.id).subscribe(prod => {
         this.product = prod;
         console.warn(this.product);
+        this.category.citestecategory().subscribe( (prod: {count: Number, products: any[]}) => {
+          this.modele= prod.products;
+          console.log("aici avem din categorie");
+          console.warn(this.modele);
+        })
       });
     });
     this.nume=this.product.name;
@@ -48,8 +57,8 @@ export class PageditareComponent implements OnInit {
       this.product.datalansarii=model.datalansarii;
     if(model.picture!= this.product.picture && model.picture != "")
       this.product.picture=model.picture;
-    if(model.categorie!= this.product.categorie && model.categorie != "")
-      this.product.categorie=model.categorie;
+
+      this.product.categorie=this.selectedCategory;
 
     this.productService.editeazadupaNume(this.product).subscribe(
       res => {
@@ -75,5 +84,9 @@ export class PageditareComponent implements OnInit {
       },
       1000);
   }
+  submit(event: any){
 
+    this.selectedCategory=event.target.value;
+    console.log(this.selectedCategory);
+  }
 }

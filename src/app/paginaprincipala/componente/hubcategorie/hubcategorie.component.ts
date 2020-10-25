@@ -60,5 +60,10 @@ submitForm(val)
     }
   );
 }
+submitEdit(val)
+{
+this.router.navigate(['/editcategory',val]).then();
+
+}
 
 }

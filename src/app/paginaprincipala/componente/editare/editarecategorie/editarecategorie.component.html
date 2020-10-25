@@ -1,0 +1,12 @@
+<label>Descriere noua pentru categorie</label>
+<form #myform="ngForm" (ngSubmit)="submitForm(myform.value)">
+  <div class="form-group text-center rosiatic titlu">
+<div class="col-md-6 text-center">
+  <div class="text-center">
+  <input  name="name" ngModel type="text" [(ngModel)]="product.name"  class="form-control text-center font-weight-bold">
+    <div name="id" ngModel [(ngModel)]="product.categorie"></div>
+  </div>
+  </div>
+  </div>
+  <input style="margin-top: 2%; border-radius: 20px; background-color: red; color: wheat" type="submit" value="Edit" />
+</form>

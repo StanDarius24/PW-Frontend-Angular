@@ -22,6 +22,7 @@ import {CategorieComponent} from './paginaprincipala/componente/categorie/catego
 import {PageditareComponent} from './paginaprincipala/componente/editare/pageditare/pageditare.component';
 import {CategorieService} from './paginaprincipala/services/categorie.service';
 import {HubcategorieComponent} from './paginaprincipala/componente/hubcategorie/hubcategorie.component';
+import {EditarecategorieComponent} from './paginaprincipala/componente/editare/editarecategorie/editarecategorie.component';
 
 
 
@@ -38,7 +39,7 @@ const appRoutes: Routes = [
   {path: 'categorie/:nume' , component: CategorieComponent},
   {path: 'editare/:id' , component:PageditareComponent},
   {path: 'categ', component:HubcategorieComponent},
-
+  {path: 'editcategory/:id', component:EditarecategorieComponent}
   ];
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ const appRoutes: Routes = [
     CategorieComponent,
     SearchComponent,
     HeaderComponent,
-    HubcategorieComponent
+    HubcategorieComponent,
+    EditarecategorieComponent
   ],
   imports: [
     BrowserModule,

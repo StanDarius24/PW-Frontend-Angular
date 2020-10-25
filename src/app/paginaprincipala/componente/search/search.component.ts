@@ -26,10 +26,9 @@ export class SearchComponent implements OnInit {
       this.name = prodName;
       this.productService.getSingleProductbyname(this.name).subscribe(prod => {
         this.product = prod;
-        this.cate.getSinglecategory(this.product.categorie).subscribe(prom =>{
-          this.catego = prom.nume;
+        this.cate.getSinglecategory(this.product.categorie).subscribe(prow => {
+          this.catego= prow.name;
         })
-        console.warn(this.product);
       });
     });
   }

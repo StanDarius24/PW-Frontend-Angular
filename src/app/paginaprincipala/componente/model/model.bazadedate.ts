@@ -4,7 +4,7 @@ id: number;
 name: string;
 descriere: string;
 pret: number;
-datalansarii: Date;
+datalansarii: string;
 categorie: string;
 picture: string;
 }

@@ -3,8 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import {ProduseService} from '../../../services/produse.service';
 import {Router} from "@angular/router";
 import {CategorieService} from '../../../services/categorie.service';
-
-
+import {Model} from '../model.bazadedate';
 
 
 @Component({
@@ -17,17 +16,27 @@ export class ListaModelComponent implements OnInit {
   constructor(private produseService: ProduseService, private router: Router,private cat :CategorieService) {
 
   }
+
+
   ids:number =0;
   modele: any[] = [];
   numecat:string ='';
   categ: string[] =[];
-  i:number;
+  mod : any[] =[];
+  i:number=0;
   ngOnInit(): void {
   this.produseService.citesteDinBazaDeDATE().subscribe((prod: {count: Number, products: any[]}) => {
   this.modele = prod.products;
+    console.log(this.modele);
+    this.cat.citestecategory().subscribe( (prods: {count: Number, products: any[]}) => {
+      this.mod= prods.products;
+      console.log(this.mod);
+  });
+
+
+
   });
   }
-
 
 
 

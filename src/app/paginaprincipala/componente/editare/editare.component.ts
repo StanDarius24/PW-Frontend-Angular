@@ -20,8 +20,24 @@ export class EditareComponent implements OnInit {
     })
   }
   submitForm(id) :void
-  {
-
-  }
+ {
+  this.mybool = true;
+  setTimeout(() =>
+    {
+      this.sec= this.sec -1;
+      setTimeout(() =>
+        {
+          this.sec= this.sec -1;
+          setTimeout(() =>
+            {
+              this.sec= this.sec -1;
+              this.router.navigate(['/editare/' +id]).then();
+            },
+            1000);
+        },
+        1000);
+    },
+    1000);
+}
 
 }

@@ -12,7 +12,7 @@ declare let $: any;
 export class ProdusComponent implements OnInit {
   id: number;
   product;
-  name :string;
+  name :string ='fail';
   constructor(private route: ActivatedRoute,
               private productService: ProduseService,
               private cart : CategorieService) { }
@@ -27,9 +27,11 @@ export class ProdusComponent implements OnInit {
       this.id = prodId;
       this.productService.getSingleProduct(this.id).subscribe(prod => {
         this.product = prod;
+        console.log('vall '+ this.product);
         this.cart.getSinglecategory(this.product.categorie).subscribe(prov =>{
           this.name = prov.name;
-        })
+          console.log('val ' + prov.name);
+        });
         console.warn(this.product);
       });
     });
