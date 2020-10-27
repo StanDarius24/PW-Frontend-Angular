@@ -10,12 +10,12 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class EditarecategorieComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute, private cat: CategorieService) {
+  constructor(private route: ActivatedRoute, private cat: CategorieService,private router : Router) {
   }
-
+  mybool =false;
   id;
   product;
-
+  sec:number =3;
   ngOnInit(): void {
     this.route.paramMap.pipe(
       map((param: ParamMap) => {
@@ -41,5 +41,22 @@ export class EditarecategorieComponent implements OnInit {
        console.log(res);
      }
    );
+    this.mybool =true;
+    setTimeout(() =>
+      {
+        this.sec= this.sec -1;
+        setTimeout(() =>
+          {
+            this.sec= this.sec -1;
+            setTimeout(() =>
+              {
+                this.sec= this.sec -1;
+                this.router.navigate(['/list']).then();
+              },
+              1000);
+          },
+          1000);
+      },
+      1000);
   }
 }
